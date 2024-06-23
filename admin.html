@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .delete-category-button {
+      cursor: pointer;
+      color: red;
+      margin-left: 10px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-gray-200 flex items-center justify-center min-h-screen">
+  <div class="container mx-auto p-6 bg-gray-800 rounded-lg shadow-lg max-w-6xl w-full">
+    <h1 class="text-3xl font-bold text-center mb-6">Admin Panel</h1>
+
+    <div class="mb-6">
+      <h2 class="text-xl font-bold mb-2">Manage Categories</h2>
+      <input type="text" id="newCategory" class="w-full p-3 bg-gray-700 text-gray-200 border border-gray-600 rounded focus:outline-none focus:border-blue-500 mb-2" placeholder="New Category">
+      <button id="addCategoryButton" class="bg-blue-600 text-white p-3 rounded hover:bg-blue-500 transition mb-4">Add Category</button>
+      <div class="relative">
+        <select id="productCategorySelect" class="w-full p-3 bg-gray-700 text-gray-200 border border-gray-600 rounded focus:outline-none focus:border-blue-500 mb-6">
+          <option value="">Select Category</option>
+        </select>
+        <button id="deleteCategoryButton" class="hidden absolute top-0 right-0 bg-red-600 text-white p-2 rounded hover:bg-red-500 transition">Delete Category</button>
+      </div>
+    </div>
+
+    <div id="productForm" class="hidden">
+      <h2 class="text-xl font-bold mb-2">Add Product</h2>
+      <input type="text" id="productName" class="w-full p-3 bg-gray-700 text-gray-200 border border-gray-600 rounded focus:outline-none focus:border-blue-500 mb-2" placeholder="Product Name">
+      <input type="url" id="productUrl" class="w-full p-3 bg-gray-700 text-gray-200 border border-gray-600 rounded focus:outline-none focus:border-blue-500 mb-2" placeholder="Product URL">
+      <div id="photoUrls" class="mb-2">
+        <input type="url" placeholder="Product Photo URL" class="w-full p-3 bg-gray-700 text-gray-200 border border-gray-600 rounded focus:outline-none focus:border-blue-500 mb-2">
+      </div>
+      <button id="addPhotoUrlButton" class="bg-blue-600 text-white p-3 rounded hover:bg-blue-500 transition mb-2">Add Photo URL</button>
+      <textarea id="bulkPhotoUrls" class="w-full p-3 bg-gray-700 text-gray-200 border border-gray-600 rounded focus:outline-none focus:border-blue-500 mb-2" placeholder="Bulk Photo URLs (comma separated)"></textarea>
+      <button id="addBulkPhotoUrlsButton" class="bg-blue-600 text-white p-3 rounded hover:bg-blue-500 transition mb-4">Add Bulk Photo URLs</button>
+      <div id="videoUrls" class="mb-2">
+        <input type="url" placeholder="Product Video URL" class="w-full p-3 bg-gray-700 text-gray-200 border border-gray-600 rounded focus:outline-none focus:border-blue-500 mb-2">
+      </div>
+      <button id="addVideoUrlButton" class="bg-blue-600 text-white p-3 rounded hover:bg-blue-500 transition mb-2">Add Video URL</button>
+      <textarea id="bulkVideoUrls" class="w-full p-3 bg-gray-700 text-gray-200 border border-gray-600 rounded focus:outline-none focus:border-blue-500 mb-2" placeholder="Bulk Video URLs (comma separated)"></textarea>
+      <button id="addBulkVideoUrlsButton" class="bg-blue-600 text-white p-3 rounded hover:bg-blue-500 transition mb-4">Add Bulk Video URLs</button>
+      <div id="copywritingFields" class="mb-4"></div>
+      <button id="addCopywritingFieldButton" class="bg-blue-600 text-white p-3 rounded hover:bg-blue-500 transition mb-4">Add Copywriting Field</button>
+      <button id="addProductButton" class="bg-green-600 text-white p-3 rounded hover:bg-green-500 transition">Add Product</button>
+    </div>
+
+    <h2 class="text-xl font-bold mb-4">Product List</h2>
+    <input type="text" id="searchProduct" class="w-full p-3 bg-gray-700 text-gray-200 border border-gray-600 rounded focus:outline-none focus:border-blue-500 mb-4" placeholder="Search Product">
+    <select id="categoryFilter" class="w-full p-3 bg-gray-700 text-gray-200 border border-gray-600 rounded focus:outline-none focus:border-blue-500 mb-4">
+      <option value="">All Categories</option>
+    </select>
+    <ul id="subjectList" class="list-none p-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></ul>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

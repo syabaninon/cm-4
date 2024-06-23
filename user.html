@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Product Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-gray-200 flex items-center justify-center min-h-screen">
+  <div class="container mx-auto p-6 bg-gray-800 rounded-lg shadow-lg max-w-6xl w-full">
+    <h1 class="text-3xl font-bold text-center mb-6">User Product Dashboard</h1>
+    
+    <input type="text" id="searchBar" placeholder="Search Products" class="w-full p-3 bg-gray-700 text-gray-200 border border-gray-600 rounded focus:outline-none focus:border-blue-500 mb-6">
+    <select id="categoryFilter" class="w-full p-3 bg-gray-700 text-gray-200 border border-gray-600 rounded focus:outline-none focus:border-blue-500 mb-6">
+      <option value="">All Categories</option>
+    </select>
+
+    <div id="productList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+  </div>
+
+  <script src="user.js"></script>
+</body>
+</html>
